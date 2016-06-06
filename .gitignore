@@ -1,47 +1,70 @@
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
+# MyBot.run AUTOIT .gitignore file
 
-# Folder config file
-Desktop.ini
+# Global Files
+/.project
+*.ini
+*.log
+*.orig
+*.png
+*.jpg
+*.exe
+*.bmp
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
+# Global Folders
+[Pp]rofiles/
+[Tt]emplates/
+[Tt]emp/
+[Bb]ackup/
 
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
+# Obsolete Files and Folders
+[Ll]oots/
+[Aa]llTowns/
 
-# Windows shortcuts
-*.lnk
+# Exclusion Curl (used for PushBullet)
+![Cc]url.exe
 
-# =========================
-# Operating System Files
-# =========================
+# Exclusion language ini files
+![Ll]anguages/*.ini
 
-# OSX
-# =========================
+# Exclusion Images/Icon
+![Ii]mages/logo.jpg
+![Ii]mages/2arrow.jpg
+![Ii]mages/MyBot.ico
+![Ii]mages/Button/Traps.png
+![Ii]mages/Button/Xbow.png
+![Ii]mages/Button/Inferno.png
+![Ii]mages/Button/BoostBarrack.png
+![Ii]mages/Button/BoostAllBarracks.png
+![Ii]mages/Button/BarrackBoosted.png
+![Ii]mages/Resources/Collect/*.png
+![Ii]mages/Resources/Collect/*.bmp
+![Ii]mages/Resources/LootCart/loot_cart.png
+![Ii]mages/Resources/Obstacles/*.png
+![Ii]mages/Resources/Tombs/*.png
+![Ii]mages/Resources/GemBox/*.png
+![Ii]mages/WeakBase/Eagle/*.png
+![Ii]mages/WeakBase/Infernos/*.png
+![Ii]mages/WeakBase/Mortars/*.png
+![Ii]mages/WeakBase/WTower/*.png
+![Ii]mages/WeakBase/Xbow/*.png
+![Ii]mages/Walls/*.jpg
+![Ss]trategies/*.ini
+# ignore test strategies
+[Ss]trategies/[Tt]est*.ini
+[Ss]trategies/[Ss]trategy 2016*.ini
 
-.DS_Store
-.AppleDouble
-.LSOverride
+![Ii]mages/Storages/Gold/*.png
+![Ii]mages/Storages/Elixir/*.png
 
-# Thumbnails
-._*
+# Debug
+[Ll]ib/[Dd]ebug/
+[Ll]ib/[Tt]est.txt
+EnableMBRDebug.txt
 
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
+# SQL (not in use)
+*.sqlite3
+*.db
 
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
+# Release files
+LastVersion*.txt
+TestVersion*.txt
