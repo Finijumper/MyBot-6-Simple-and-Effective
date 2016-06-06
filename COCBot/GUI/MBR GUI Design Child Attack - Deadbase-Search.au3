@@ -94,9 +94,14 @@ Local $x = 25, $y = 45
 		$IMGchkDBWardenSleepWait=GUICtrlCreateIcon($pIconLib, $eIcnSleepingWarden, $x - 18, $y + 4, 48, 48)
 			GUICtrlSetTip(-1, $txtTip)
 			GUICtrlSetState(-1,$GUI_HIDE)
+	
+	$y += 80
+	$x = 10
+	    $chkDBSpellsWait = GUICtrlCreateCheckbox("Wait for Spells to be Ready", $x, $y, -1, -1)
 	GUICtrlCreateGroup("", -99, -99, 1, 1)
 
 Local $x = 220, $y = 45
+
 	$grpDBFilter = GUICtrlCreateGroup(GetTranslated(625,14, "Filters"), $x - 20, $y - 20, 225, 305)
 		$x -= 15
 		$cmbDBMeetGE = GUICtrlCreateCombo("", $x , $y + 10, 65, -1, BitOR($CBS_DROPDOWNLIST, $CBS_AUTOHSCROLL))

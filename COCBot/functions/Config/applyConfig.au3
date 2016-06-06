@@ -2360,6 +2360,17 @@ _GUICtrlComboBox_SetCurSel($cmbTHSnipeBeforeDBScript, _GUICtrlComboBox_FindStrin
 LoadABSnipeAttacks() ; recreate combo box values
 _GUICtrlComboBox_SetCurSel($cmbTHSnipeBeforeLBScript, _GUICtrlComboBox_FindStringExact($cmbTHSnipeBeforeLBScript, $THSnipeBeforeLBScript))
 
+   If $iEnableSpellsWait[$DB] = 1 Then
+		 GUICtrlSetState($chkDBSpellsWait, $GUI_CHECKED)
+	  Else
+		 GUICtrlSetState($chkDBSpellsWait, $GUI_UNCHECKED)
+   EndIf
+   If $iEnableSpellsWait[$LB] = 1 Then
+		 GUICtrlSetState($chkABSpellsWait, $GUI_CHECKED)
+	  Else
+		 GUICtrlSetState($chkABSpellsWait, $GUI_UNCHECKED)
+   EndIf 
+
 
 
 

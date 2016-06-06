@@ -153,6 +153,7 @@ Func chkDBActivateSearches()
 		GUICtrlSetState($txtDBSearchesMax, $GUI_ENABLE)
 		;DBPanel($GUI_SHOW)
 		;_GUI_Value_STATE("SHOW", $groupSearchDB)
+_GUI_Value_STATE("SHOW", $groupMiscDB)
 		;cmbDBGoldElixir()
 		;_GUI_Value_STATE("SHOW", $groupHerosDB)
 	Else
@@ -161,6 +162,7 @@ Func chkDBActivateSearches()
 		GUICtrlSetState($txtDBSearchesMax, $GUI_DISABLE)
 		;DBPanel($GUI_HIDE)
 		;_GUI_Value_STATE("HIDE", $groupSearchDB)
+_GUI_Value_STATE("HIDE", $groupMiscDB)
 		;_GUI_Value_STATE("HIDE", $groupHerosDB)
 	EndIf
 	;EnableSearchPanels($DB)
@@ -173,6 +175,7 @@ Func chkDBActivateTropies()
 		GUICtrlSetState($lblDBTropies, $GUI_ENABLE)
 		GUICtrlSetState($txtDBTropiesMax, $GUI_ENABLE)
 		;_GUI_Value_STATE("SHOW", $groupSearchDB)
+_GUI_Value_STATE("SHOW", $groupMiscDB)
 		;cmbDBGoldElixir()
 		;_GUI_Value_STATE("SHOW", $groupHerosDB)
 	Else
@@ -180,6 +183,7 @@ Func chkDBActivateTropies()
 		GUICtrlSetState($lblDBTropies, $GUI_DISABLE)
 		GUICtrlSetState($txtDBTropiesMax, $GUI_DISABLE)
 		;_GUI_Value_STATE("HIDE", $groupSearchDB)
+_GUI_Value_STATE("HIDE", $groupMiscDB)
 		;_GUI_Value_STATE("HIDE", $groupHerosDB)
 	EndIf
 	;EnableSearchPanels($DB)
@@ -191,12 +195,14 @@ Func chkDBActivateCamps()
 		GUICtrlSetState($lblDBArmyCamps, $GUI_ENABLE)
 		GUICtrlSetState($txtDBArmyCamps, $GUI_ENABLE)
 		;_GUI_Value_STATE("SHOW", $groupSearchDB)
+_GUI_Value_STATE("SHOW", $groupMiscDB)
 		;cmbDBGoldElixir()
 		;_GUI_Value_STATE("SHOW", $groupHerosDB)
 	Else
 		GUICtrlSetState($lblDBArmyCamps, $GUI_DISABLE)
 		GUICtrlSetState($txtDBArmyCamps, $GUI_DISABLE)
 		;_GUI_Value_STATE("HIDE", $groupSearchDB)
+_GUI_Value_STATE("HIDE", $groupMiscDB)
 		;_GUI_Value_STATE("HIDE", $groupHerosDB)
 	EndIf
 	;EnableSearchPanels($DB)
@@ -234,10 +240,11 @@ Func EnableSearchPanels($mode)
 	;_GUI_Value_STATE("HIDE", $groupAttackDBSpell&"#"&$groupIMGAttackDBSpell&"#"&$groupAttackABSpell&"#"&$groupIMGAttackABSpell)
 	Switch $mode
 		Case $DB
-			If GUICtrlRead($chkDBActivateSearches) = $GUI_CHECKED Or GUICtrlRead($chkDBActivateTropies) = $GUI_CHECKED Or GUICtrlRead($chkDBActivateCamps) = $GUI_CHECKED Or GUICtrlRead($chkDBKingWait) = $GUI_CHECKED Or GUICtrlRead($chkDBQueenWait) = $GUI_CHECKED Or GUICtrlRead($chkDBWardenWait) = $GUI_CHECKED Then
+			If GUICtrlRead($chkDBActivateSearches) = $GUI_CHECKED Or GUICtrlRead($chkDBActivateTropies) = $GUI_CHECKED Or GUICtrlRead($chkDBActivateCamps) = $GUI_CHECKED Or GUICtrlRead($chkDBKingWait) = $GUI_CHECKED Or GUICtrlRead($chkDBQueenWait) = $GUI_CHECKED Or GUICtrlRead($chkDBWardenWait) = $GUI_CHECKED Or GUICtrlRead($chkDBSpellsWait) = $GUI_CHECKED Then
 				_GUI_Value_STATE("SHOW", $groupHerosDB)
 				;search
 				_GUI_Value_STATE("SHOW", $groupSearchDB)
+_GUI_Value_STATE("SHOW", $groupMiscDB)
 				cmbDBGoldElixir()
 				;attack
 				;_GUI_Value_STATE("SHOW", $groupAttackDB)
@@ -249,6 +256,7 @@ Func EnableSearchPanels($mode)
 				_GUI_Value_STATE("HIDE", $groupHerosDB)
 				;search
 				_GUI_Value_STATE("HIDE", $groupSearchDB)
+_GUI_Value_STATE("HIDE", $groupMiscDB)
 				;attack
 				;_GUI_Value_STATE("HIDE", $groupAttackDB)
 				;_GUI_Value_STATE("HIDE", $groupIMGAttackDB)
@@ -256,10 +264,11 @@ Func EnableSearchPanels($mode)
 				;_GUI_Value_STATE("HIDE", $groupEndBattkeDB)
 			EndIf
 		Case $LB
-			If GUICtrlRead($chkABActivateSearches) = $GUI_CHECKED Or GUICtrlRead($chkABActivateTropies) = $GUI_CHECKED Or GUICtrlRead($chkABActivateCamps) = $GUI_CHECKED Or GUICtrlRead($chkABKingWait) = $GUI_CHECKED Or GUICtrlRead($chkABQueenWait) = $GUI_CHECKED Or GUICtrlRead($chkABWardenWait) = $GUI_CHECKED Then
+			If GUICtrlRead($chkABActivateSearches) = $GUI_CHECKED Or GUICtrlRead($chkABActivateTropies) = $GUI_CHECKED Or GUICtrlRead($chkABActivateCamps) = $GUI_CHECKED Or GUICtrlRead($chkABKingWait) = $GUI_CHECKED Or GUICtrlRead($chkABQueenWait) = $GUI_CHECKED Or GUICtrlRead($chkABWardenWait) = $GUI_CHECKED Or GUICtrlRead($chkABSpellsWait) = $GUI_CHECKED Then
 				_GUI_Value_STATE("SHOW", $groupHerosAB)
 				;search
 				_GUI_Value_STATE("SHOW", $groupSearchAB)
+_GUI_Value_STATE("SHOW", $groupMiscAB)
 				cmbABGoldElixir()
 				;attack
 				;_GUI_Value_STATE("SHOW", $groupAttackAB)
@@ -271,6 +280,7 @@ Func EnableSearchPanels($mode)
 				_GUI_Value_STATE("HIDE", $groupHerosAB)
 				;search
 				_GUI_Value_STATE("HIDE", $groupSearchAB)
+_GUI_Value_STATE("HIDE", $groupMiscAB)
 				;attack
 				;_GUI_Value_STATE("HIDE", $groupAttackAB)
 				;_GUI_Value_STATE("HIDE", $groupIMGAttackAB)
@@ -313,6 +323,7 @@ Func chkABActivateSearches()
 		GUICtrlSetState($lblABSearches, $GUI_ENABLE)
 		GUICtrlSetState($txtABSearchesMax, $GUI_ENABLE)
 		;_GUI_Value_STATE("SHOW", $groupSearchAB)
+_GUI_Value_STATE("SHOW", $groupMiscAB)
 		;cmbABGoldElixir()
 		;_GUI_Value_STATE("SHOW", $groupHerosAB)
 	Else
@@ -320,6 +331,7 @@ Func chkABActivateSearches()
 		GUICtrlSetState($lblABSearches, $GUI_DISABLE)
 		GUICtrlSetState($txtABSearchesMax, $GUI_DISABLE)
 		;_GUI_Value_STATE("HIDE", $groupSearchAB)
+_GUI_Value_STATE("HIDE", $groupMiscAB)
 		;_GUI_Value_STATE("HIDE", $groupHerosAB)
 	EndIf
 	;EnableSearchPanels($LB)
@@ -332,6 +344,7 @@ Func chkABActivateTropies()
 		GUICtrlSetState($lblABTropies, $GUI_ENABLE)
 		GUICtrlSetState($txtABTropiesMax, $GUI_ENABLE)
 		;_GUI_Value_STATE("SHOW", $groupSearchAB)
+_GUI_Value_STATE("SHOW", $groupMiscAB)
 		;cmbABGoldElixir()
 		;_GUI_Value_STATE("SHOW", $groupHerosAB)
 	Else
@@ -339,6 +352,7 @@ Func chkABActivateTropies()
 		GUICtrlSetState($lblABTropies, $GUI_DISABLE)
 		GUICtrlSetState($txtABTropiesMax, $GUI_DISABLE)
 		;_GUI_Value_STATE("HIDE", $groupSearchAB)
+_GUI_Value_STATE("HIDE", $groupMiscAB)
 		;_GUI_Value_STATE("HIDE", $groupHerosAB)
 	EndIf
 	;EnableSearchPanels($LB)
@@ -350,12 +364,14 @@ Func chkABActivateCamps()
 		GUICtrlSetState($lblABArmyCamps, $GUI_ENABLE)
 		GUICtrlSetState($txtABArmyCamps, $GUI_ENABLE)
 		;_GUI_Value_STATE("SHOW", $groupSearchAB)
+_GUI_Value_STATE("SHOW", $groupMiscAB)
 		;cmbABGoldElixir()
 		;_GUI_Value_STATE("SHOW", $groupHerosAB)
 	Else
 		GUICtrlSetState($lblABArmyCamps, $GUI_DISABLE)
 		GUICtrlSetState($txtABArmyCamps, $GUI_DISABLE)
 		;_GUI_Value_STATE("HIDE", $groupSearchAB)
+_GUI_Value_STATE("HIDE", $groupMiscAB)
 		;_GUI_Value_STATE("HIDE", $groupHerosAB)
 	EndIf
 	;EnableSearchPanels($LB)
